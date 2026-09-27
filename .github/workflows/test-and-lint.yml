@@ -39,11 +39,11 @@ jobs:
         - name: Checkout
           uses: actions/checkout@v4
         - name: Terraform Lint
-          run:
+          run: |
             cd infra/
-            docker compose run --rm terraform chdir=deploy/ init -backend=false
-            docker compose run --rm terraform chdir=setup/ init -backend=false
-            docker compose run --rm terraform chdir=setup/ validate
-            docker compose run --rm terraform chdir=setup/ fmt -check
-            docker compose run --rm terraform chdir=deploy/ validate
-            docker compose run --rm terraform chdir=deploy/ fmt -check
+            docker compose run --rm terraform -chdir=deploy/ init -backend=false
+            docker compose run --rm terraform -chdir=setup/ init -backend=false
+            docker compose run --rm terraform -chdir=setup/ validate
+            docker compose run --rm terraform -chdir=setup/ fmt -check
+            docker compose run --rm terraform -chdir=deploy/ validate
+            docker compose run --rm terraform -chdir=deploy/ fmt -check
