@@ -17,3 +17,8 @@ variable "contact" {
   description = "Contact information for tagging resources."
   default     = "nicolasjesus.ferraro@gmail.com"
 }
+
+variable "prefix" {
+  description = "Prefix for resources in AWS."
+  default     = "raa"
+}
