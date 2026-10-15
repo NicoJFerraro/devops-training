@@ -302,7 +302,7 @@ resource "aws_iam_user_policy_attachment" "elb" {
   policy_arn = aws_iam_policy.elb.arn
 }
 
-# Policy for EFS access #
+# Policy for EFS access
 data "aws_iam_policy_document" "efs" {
   statement {
     effect = "Allow"
