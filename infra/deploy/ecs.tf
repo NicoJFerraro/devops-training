@@ -61,7 +61,7 @@ resource "aws_ecs_task_definition" "api" {
         user              = "django-user"
         environment = [
           {
-            name  = "DJANGO_SECRET_KEY"
+            name  = "SECRET_KEY"
             value = var.django_secret_key
           },
           {
